@@ -1,13 +1,17 @@
 package hiber.dao;
 
+import hiber.model.Car;
 import hiber.model.User;
 
 import java.util.List;
 
 public interface UserDao {
-   void add(User user);
-   List<User> listUsers();
+    void add(User user);
 
-   User getUserByCar(String model, int series);
+    List<User> getListUsers();
 
+    void addCar(Car car);
+
+    @SuppressWarnings("unchecked")
+    User getUserByCar(Car car);
 }
