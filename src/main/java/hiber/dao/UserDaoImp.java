@@ -19,13 +19,12 @@ public class UserDaoImp implements UserDao {
     }
 
     @Override
-    public void add(User user) {
+    public void add(User user, Car car) {
         sessionFactory.getCurrentSession().save(user);
-    }
-
-    public void addCar(Car car) {
         sessionFactory.getCurrentSession().save(car);
     }
+
+
 
     @Override
     @SuppressWarnings("unchecked")

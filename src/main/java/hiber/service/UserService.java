@@ -7,13 +7,10 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 public interface UserService {
-    void add(User user);
 
     @Transactional
-    void addCar(Car car);
+    void add(User user, Car car);
 
     List<User> listUsers();
-
-    @Transactional(readOnly = true)
     User getUserByCar(Car car);
 }
