@@ -1,7 +1,6 @@
 package hiber.service;
 
 import hiber.dao.UserDao;
-import hiber.model.Car;
 import hiber.model.User;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,19 +18,19 @@ public class UserServiceImp implements UserService {
 
     @Transactional
     @Override
-    public void add(User user,Car car) {
-        userDao.add(user, car);
+    public void add(User user) {
+        userDao.add(user);
     }
 
     @Transactional(readOnly = true)
     @Override
     public List<User> listUsers() {
-        return userDao.getListUsers();
+        return userDao.listUsers();
     }
 
     @Transactional(readOnly = true)
     @Override
-    public User getUserByCar(Car car) {
-        return userDao.getUserByCar(car);
+    public User getUserByCar(String model, int series) {
+        return userDao.getUserByCar(model, series);
     }
 }
