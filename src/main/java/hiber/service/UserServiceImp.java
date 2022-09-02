@@ -18,8 +18,8 @@ public class UserServiceImp implements UserService {
 
     @Transactional
     @Override
-    public void add(User user) {
-        userDao.add(user);
+    public void getAddUser(User user) {
+        userDao.getAddUser(user);
     }
 
     @Transactional(readOnly = true)

@@ -9,7 +9,7 @@ import java.util.List;
 public interface UserService {
 
     @Transactional
-    void add(User user);
+    void getAddUser(User user);
 
     List<User> listUsers();
 
